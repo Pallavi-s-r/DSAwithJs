@@ -63,3 +63,72 @@ function findHighLowFreq(arr) {
     };
 }
 findHighLowFreq(arr);
+
+
+//3. Find the frequency of each character in a string
+function countCharFrequency(str) {
+    let freq = {}; // acts as the hash map
+    for (let char of str) {
+        if (freq[char]) {
+            freq[char] += 1;
+        } else {
+            freq[char] = 1;
+        }   
+    }
+    return freq;
+}
+let str = "hello world";
+console.log(countCharFrequency(str)); // returns { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
+
+//4. Find the frequency of each word in a sentence
+function countWordFrequency(sentence) {
+    let words = sentence.split(' ');        
+    let freq = {}; // acts as the hash map
+
+    for (let word of words) {
+        if (freq[word]) {
+            freq[word] += 1;
+        } else {
+            freq[word] = 1;
+        }   
+    }
+
+    return freq;
+
+
+}let sentence = "this is a test this is only a test";
+console.log(countWordFrequency(sentence)); // returns { this: 2, is: 2, a: 2, test: 2, only: 1 }    
+
+//5. Find the frequency of each digit in a number
+function countDigitFrequency(num) {
+    let freq = {}; // acts as the hash map
+    let strNum = num.toString(); // Convert number to string for iteration
+    for (let digit of strNum) {
+        if (freq[digit]) {
+            freq[digit] += 1;
+        } else {
+            freq[digit] = 1;
+        }       
+    }
+    return freq;
+}
+let num = 123321;
+console.log(countDigitFrequency(num));
+
+//6. Find the frequency of each element in a 2D array
+function count2DFrequency(arr) {
+    let freq = {}; 
+    for (let subArr of arr) {
+        for (let num of subArr) {
+            if (freq[num]) {
+                freq[num] += 1;
+
+            } else {
+                freq[num] = 1;
+            }
+        }
+    }
+    return freq;
+}
+let arr2D = [[1, 2, 2], [3, 1, 4], [2, 3]];
+console.log(count2DFrequency(arr2D)); 
